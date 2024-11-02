@@ -50,6 +50,7 @@ for(i = 0 ; i < 5 ; i += 2)
  printf("%c\t",M[i][4-i]);
   }
   printf("\n");
+return 0;
 }
                                                          EX 2 :
 #include <stdio.h>
