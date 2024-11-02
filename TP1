@@ -82,7 +82,7 @@ int main() {
         }
     }
     
-    // عرض المصفوفة بعد التبادل
+    // 
    printf("\n");
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
