@@ -1,48 +1,5 @@
+
 #include <stdio.h>
-
-
-
-int main() {
-    int M[4][4];
-    int i ,j ,temp;
-    //   من المستخدم
-    printf(" %dx%d : \n", 4, 4);
-    for (  i = 0; i < 4; i++) {
-        for ( j = 0; j < 4; j++) {
-            printf("M[%d][%d]: ", i, j);
-            scanf("%d", &M[i][j]);
-        }
-    }
-
-    //  الأصلية
-    printf("\n : \n");
-    for ( i = 0; i < 4; i++) {
-        for ( j = 0; j < 4; j++) {
-            printf("%d ", M[i][j]);
-        }
-        printf("\n");
-    }
-
-     //.   تبديل    
-    for ( i = 0; i < 4; i++) {
-        for ( j = 0; j < i; j++) {
-             temp = M[i][j];
-            M[i][j] = M[j][i];
-            M[j][i] = temp;
-        }
-    }
-
-    //  بعد التبديل
-    printf("\n : \n");
-    for (  i = 0; i < 4; i++) {
-        for ( j = 0; j < 4; j++) {
-            printf("%d ", M[i][j]);
-        }
-        printf("\n");
-    }
-
-    return 0;
-}#include <stdio.h>
 int main()
 { 
  int   i , j , n = 0 ;
@@ -99,41 +56,46 @@ return 0;
                                                          EX 2 :
 #include <stdio.h>
 
-#define SIZE 4
+
 
 int main() {
-    int M[SIZE][SIZE] = {
-        {1, 2, 3, 4},
-        {5, 6, 7, 8},
-        {9, 10, 11, 12},
-        {13, 14, 15, 16}
-    };
-    
-    // 
- printf("\n");
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
+    int M[4][4];
+    int i ,j ,temp;
+    //   من المستخدم
+    printf(" %dx%d : \n", 4, 4);
+    for (  i = 0; i < 4; i++) {
+        for ( j = 0; j < 4; j++) {
+            printf("M[%d][%d]: ", i, j);
+            scanf("%d", &M[i][j]);
+        }
+    }
+
+    //  الأصلية
+    printf("\n : \n");
+    for ( i = 0; i < 4; i++) {
+        for ( j = 0; j < 4; j++) {
             printf("%d ", M[i][j]);
         }
         printf("\n");
     }
-    
-    // 
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < i; j++) {
-            int temp = M[i][j];
-            M[i][j] =M[j][i];
+
+     //.   تبديل    
+    for ( i = 0; i < 4; i++) {
+        for ( j = 0; j < i; j++) {
+             temp = M[i][j];
+            M[i][j] = M[j][i];
             M[j][i] = temp;
         }
     }
-    
-    // 
-   printf("\n");
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
+
+    //  بعد التبديل
+    printf("\n : \n");
+    for (  i = 0; i < 4; i++) {
+        for ( j = 0; j < 4; j++) {
             printf("%d ", M[i][j]);
         }
         printf("\n");
     }
+
     return 0;
 }
