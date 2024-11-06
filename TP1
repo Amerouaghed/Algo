@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main()
 { 
- int   i , j , n = 0 ;
-    int X ;    
+ int   i , j   ;
+      
     char M[5][5] =
     {
         {'1','2','3','4','5'},
