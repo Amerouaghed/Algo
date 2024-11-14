@@ -42,14 +42,20 @@ for(i = 0 ; i < 5 ; i += 2)
     
     
     printf("\n");
-//
+// 
+
+printf ( "diagonale principale:")
+
  for(i = 0 ; i < 5 ; i ++)
  {
  printf("%c\t",M[i][i]);
  }
 
   printf("\n");
-//
+// 
+printf ("\n diagonale secondaire:\n");
+
+
   for(i = 0 ; i < 5 ; i ++){
  printf("%c\t",M[i][4-i]);
   }
@@ -61,17 +67,10 @@ for(i = 0 ; i < 5 ; i += 2)
 
     int T[4][4];
     int temp;
-    //   من المستخدم
-    printf(" %dx%d : \n", 4, 4);
-    for (  i = 0; i < 4; i++) {
-        for ( j = 0; j < 4; j++) {
-            printf("T[%d][%d]: ", i, j);
-            scanf("%d", &T[i][j]);
-        }
-    }
+    
 
-    //  الأصلية
-    printf("\n : \n");
+    //  
+    printf("\n original T: \n");
     for ( i = 0; i < 4; i++) {
         for ( j = 0; j < 4; j++) {
             printf("%d ", T[i][j]);
@@ -79,7 +78,7 @@ for(i = 0 ; i < 5 ; i += 2)
         printf("\n");
     }
 
-     //.   تبديل    
+     //
     for ( i = 0; i < 4; i++) {
         for ( j = 0; j < i; j++) {
              temp = T[i][j];
@@ -88,8 +87,8 @@ for(i = 0 ; i < 5 ; i += 2)
         }
     }
 
-    //  بعد التبديل
-    printf("\n : \n");
+    //  
+    printf("\n apre changement: \n");
     for (  i = 0; i < 4; i++) {
         for ( j = 0; j < 4; j++) {
             printf("%d ", T[i][j]);
