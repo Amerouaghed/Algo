@@ -1,47 +1,7 @@
 #include <stdio.h>
-
-#define SIZE 4
-
-int main() {
-    int matrix[SIZE][SIZE] = {
-        {1, 2, 3, 4},
-        {5, 6, 7, 8},
-        {9, 10, 11, 12},
-        {13, 14, 15, 16}
-    };
-    
-    // عرض المصفوفة الأصلية
-    printf("المصفوفة الأصلية:\n");
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\n");
-    }
-    
-    // تبادل المثلث السفلي مع المثلث العلوي حول القطر الرئيسي
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < i; j++) {
-            int temp = matrix[i][j];
-            matrix[i][j] = matrix[j][i];
-            matrix[j][i] = temp;
-        }
-    }
-    
-    // عرض المصفوفة بعد التبادل
-    printf("\nالمصفوفة بعد التبادل:\n");
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\n");
-    }
-    
-    return 0;
-}#include <stdio.h>
 int main()
 { 
- int   i , j   ;
+ int   i , j , temp ;
       
     char M[5][5] =
     {
@@ -51,17 +11,19 @@ int main()
         {'5','6','p','n','3'},
         {'2','9','t','m','k'}
     };
-    // matrice M:
+     printf("matrice M:");
+       printf("\n");
     for(i = 0 ; i < 5 ; i++)
     {
      printf("\n");
-        for(j = 0 ; j < 5 ; j++)
+        for(j = 0 ; j < 5; j++)
 
             printf("%c\t",M[i][j]);
 
      }  
         printf("\n\n");
-    //  lignes d'indice pair:
+  printf("lignes d'indice pair:");
+    printf("\n\n");
 for(i = 0 ; i < 5 ; i += 2)
      {
          for(j = 0 ; j < 5 ; j ++)
@@ -70,9 +32,8 @@ for(i = 0 ; i < 5 ; i += 2)
          printf("\n");
      }  
      printf("\n\n");
-    // lignes d'indice impair:
-      
-    
+   printf("lignes d'indice impair:");
+        printf("\n\n");
     for (int i = 0; i < 5; i++) {
         for (int j = 1; j < 5; j += 2) {
             printf("%c ", M[i][j]);
@@ -84,18 +45,17 @@ for(i = 0 ; i < 5 ; i += 2)
     printf("\n");
 // 
 
-printf ( "diagonale principale:")
-
- for(i = 0 ; i < 5 ; i ++)
+printf ("diagonale principale:");
+    printf("\n\n");
+ for(i = 0; i < 5 ; i ++)
  {
  printf("%c\t",M[i][i]);
  }
 
   printf("\n");
-// 
-printf ("\n diagonale secondaire:\n");
 
-
+printf ("\ndiagonale secondaire:\n");
+  printf("\n");
   for(i = 0 ; i < 5 ; i ++){
  printf("%c\t",M[i][4-i]);
   }
@@ -105,15 +65,20 @@ printf ("\n diagonale secondaire:\n");
 
 
 
-    int T[4][4];
-    int temp;
+    int T[4][4]=
+    {
+      {1, 2, 3, 4},
+      {5, 6, 7, 8},
+      {9, 10, 11, 12},
+      {13, 14, 15, 16}
+    };
     
-
-    //  
-    printf("\n original T: \n");
+    printf("\noriginal T:\n");
+      printf("\n");
     for ( i = 0; i < 4; i++) {
         for ( j = 0; j < 4; j++) {
-            printf("%d ", T[i][j]);
+            printf("%d  ", T[i][j]);
+            
         }
         printf("\n");
     }
@@ -128,10 +93,11 @@ printf ("\n diagonale secondaire:\n");
     }
 
     //  
-    printf("\n apre changement: \n");
+    printf("\napres le changement:\n");
+      printf("\n");
     for (  i = 0; i < 4; i++) {
         for ( j = 0; j < 4; j++) {
-            printf("%d ", T[i][j]);
+            printf("%d  ", T[i][j]);
         }
         printf("\n");
     }
