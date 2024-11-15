@@ -114,3 +114,60 @@ int main() {
     free(ch);
     return 0;
 }
+
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+// دالة لتخصيص الذاكرة للسلسلة بناءً على الحجم المدخل
+char *ChargerChaine(int N) {
+    return (char *)malloc(N * sizeof(char));
+}
+
+// دالة لحساب طول السلسلة
+int Longueur(char *ch) {
+    return strlen(ch);
+}
+
+// دالة لنسخ السلسلة من المؤشر p إلى المصفوفة Tab
+void ChargerTab(char *p, char Tab[]) {
+    strcpy(Tab, p);
+}
+
+// دالة لعرض محتويات المصفوفة Tab حتى العدد m من العناصر
+void AfficherTab(char Tab[], int m) {
+    for (int i = 0; i < m; i++) {
+        printf("%c", Tab[i]);
+    }
+    printf("\n");
+}
+
+// دالة لعكس محتويات المصفوفة Tab وتخزين النتيجة في المصفوفة T
+void InverserTab(char Tab[], char T[], int m) {
+    for (int i = 0; i < m; i++) {
+        T[i] = Tab[m - i - 1];
+    }
+}
+
+int main() {
+    char *ch;
+    int n;
+    printf("Veuillez saisir la taille maximale de la chaine:\n");
+    scanf("%d", &n);
+    ch = ChargerChaine(n); // تخصيص الذاكرة للسلسلة
+    printf("Entrez la chaine:\n");
+    scanf("%s", ch); // إدخال السلسلة
+
+    int m = Longueur(ch); // حساب طول السلسلة
+    char Tab[m], T[m];
+
+    ChargerTab(ch, Tab); // نسخ السلسلة إلى Tab
+    AfficherTab(Tab, m); // عرض محتويات Tab
+
+    InverserTab(Tab, T, m); // عكس محتويات Tab وتخزينها في T
+    AfficherTab(T, m); // عرض السلسلة المعكوسة
+
+    free(ch); // تحرير الذاكرة
+    return 0;
+}
