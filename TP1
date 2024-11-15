@@ -1,4 +1,44 @@
 #include <stdio.h>
+
+#define SIZE 4
+
+int main() {
+    int matrix[SIZE][SIZE] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
+    
+    // عرض المصفوفة الأصلية
+    printf("المصفوفة الأصلية:\n");
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    
+    // تبادل المثلث السفلي مع المثلث العلوي حول القطر الرئيسي
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < i; j++) {
+            int temp = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = temp;
+        }
+    }
+    
+    // عرض المصفوفة بعد التبادل
+    printf("\nالمصفوفة بعد التبادل:\n");
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}#include <stdio.h>
 int main()
 { 
  int   i , j   ;
