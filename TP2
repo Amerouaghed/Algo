@@ -1,18 +1,27 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+
 
 char *ChargerChaine(int N) {
     return (char *)malloc(N * sizeof(char));
 }
 
+
 int Longueur(char *ch) {
-    return strlen(ch);
+    int len = 0;
+    while (ch[len] != '\0') { 
+        len++;
+    }
+   return len; }
+void ChargerTab(char *p, char Tab[]) {
+    int i = 0;
+    while (p[i] != '\0') { 
+        Tab[i] = p[i];
+        i++;
+    }
+    Tab[i] = '\0';
 }
 
-void ChargerTab(char *p, char Tab[]) {
-    strcpy(Tab, p);
-}
 
 void AfficherTab(char Tab[], int m) {
     for (int i = 0; i < m; i++) {
@@ -21,48 +30,41 @@ void AfficherTab(char Tab[], int m) {
     printf("\n");
 }
 
-
 void InverserTab(char Tab[], char T[], int m) {
     for (int i = 0; i < m; i++) {
         T[i] = Tab[m - i - 1];
     }
+    T[m] = '\0';
 }
+
 
 int main() {
     char *ch;
     int n;
-    
+
     printf("Veuillez saisir la taille maximale de la chaine:\n");
     scanf("%d", &n);
-    
-     
+
     ch = ChargerChaine(n); 
     if (ch == NULL) {
         printf("Erreur \n");
         return 1;
     }
-    
-   
+
     printf("Entrez la chaine:\n");
     scanf("%s", ch);
 
+    int m = Longueur(ch);  
+    char Tab[m + 1], T[m + 1]; 
 
-    int m = Longueur(ch);
-    char Tab[m], T[m]; 
-    
-    
-    ChargerTab(ch, Tab);
+    ChargerTab(ch, Tab); 
     printf(" Tab:\n");
     AfficherTab(Tab, m);
 
-
-    InverserTab(Tab, T, m);
+    InverserTab(Tab, T, m); 
     printf(" inverse de T:\n");
     AfficherTab(T, m);
 
-    
     free(ch); 
     return 0;
-}
-
-
+} 
